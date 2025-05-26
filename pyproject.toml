@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video_processor"
+version = "0.1.0"
+description = "TS to HLS converter"
+authors = [{ name = "shurajan", email = "shurajangit@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+video_processor = "video_processor.__main__:main"
