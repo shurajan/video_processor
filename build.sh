@@ -19,13 +19,14 @@ source "$VENV_DIR/bin/activate"
 
 # === 2. Установка pex
 pip install --upgrade pip
+pip install -r requirements.txt
 pip install --upgrade pex build
 
 # === 3. Сборка PEX с явным указанием точки входа
 mkdir -p "$(dirname "$PEX_TARGET")"
 
 echo "🔧 Building PEX → $PEX_TARGET"
-pex . -o "$PEX_TARGET" --entry-point video_processor
+pex . -r requirements.txt -o "$PEX_TARGET" --entry-point video_processor
 
 deactivate
 chmod +x "$PEX_TARGET"

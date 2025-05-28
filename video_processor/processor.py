@@ -3,6 +3,7 @@ from .stages import (
     KeyframeGenerationStage, CleanupStage
 )
 from .stages.fix_corrupted import FixCorruptedStage
+from .stages.nsfw_scan_stage import NSFWScanStage
 from .videoinfo import VideoInfo, VideoProcessorError
 import logging
 import sys
@@ -23,6 +24,7 @@ class VideoProcessor:
             DirectoryPreparationStage(),
             HLSConversionStage(),
             KeyframeGenerationStage(),
+            NSFWScanStage(),
             CleanupStage(),
         ]
 
