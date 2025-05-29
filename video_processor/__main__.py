@@ -5,10 +5,7 @@ parser = argparse.ArgumentParser(
     description="Конвертация TS видео в HLS плейлисты"
 )
 parser.add_argument('input', help='Входной .ts файл')
-parser.add_argument(
-    '--threshold', '-t', type=int, default=5400,
-    help='Порог длительности для разделения (сек, по умолчанию 5400 = 1.5ч)'
-)
+
 parser.add_argument(
     '--keep-original', '-k', action='store_true',
     help='Сохранить исходный файл'
@@ -30,7 +27,7 @@ logging.basicConfig(
 from video_processor.processor import VideoProcessor
 
 def main():
-    processor = VideoProcessor(threshold=args.threshold)
+    processor = VideoProcessor()
     processor.process(args.input, keep_original=args.keep_original)
 
 if __name__ == '__main__':

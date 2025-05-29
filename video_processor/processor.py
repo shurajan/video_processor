@@ -12,8 +12,7 @@ from typing import List, Optional
 logger = logging.getLogger(__name__)
 
 class VideoProcessor:
-    def __init__(self, threshold: int = 5400):
-        self.threshold = threshold
+    def __init__(self):
         self.stages: List = []
         self._setup_default_stages()
 
@@ -41,7 +40,6 @@ class VideoProcessor:
         try:
             video_info = VideoInfo(input_path)
             context = {
-                'threshold': self.threshold,
                 'keep_original': keep_original
             }
 
