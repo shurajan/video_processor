@@ -22,8 +22,8 @@ class VideoProcessor:
             ValidationStage(),
             DirectoryPreparationStage(),
             HLSConversionStage(),
-            KeyframeGenerationStage(),
-            NSFWScanStage(),
+            #KeyframeGenerationStage(),
+            #NSFWScanStage(),
             CleanupStage(),
         ]
 
